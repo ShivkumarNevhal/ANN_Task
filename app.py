@@ -6,17 +6,17 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model('model_tf215.h5')
+model = tf.keras.models.load_model("model/model_tf215.h5", compile=False)
 
 # Load the encoders and scaler
-with open('label_encoder_gender.pkl', 'rb') as file:
-    label_encoder_gender = pickle.load(file)
+with open("artifacts/scaler.pkl", "rb") as f:
+    scaler = pickle.load(f)
 
-with open('one_hot_encoder_geo.pkl', 'rb') as file:
-    onehot_encoder_geo = pickle.load(file)
+with open("artifacts/label_encoder_gender.pkl", "rb") as f:
+    label_encoder_gender = pickle.load(f)
 
-with open('scaler.pkl', 'rb') as file:
-    scaler = pickle.load(file)
+with open("artifacts/one_hot_encoder_geo.pkl", "rb") as f:
+    onehot_encoder_geo = pickle.load(f)
 
 
 ## streamlit app designing
@@ -67,4 +67,5 @@ st.write(f'Churn Probability: {prediction_proba:.2f}')
 if prediction_proba > 0.5:
     st.write('The customer is likely to churn.')
 else:
+
     st.write('The customer is not likely to churn.')
