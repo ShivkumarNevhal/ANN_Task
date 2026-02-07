@@ -9,13 +9,13 @@ import pickle
 model = tf.keras.models.load_model("model_tf215.h5", compile=False)
 
 # Load the encoders and scaler
-with open("artifacts/scaler.pkl", "rb") as f:
+with open("scaler.pkl", "rb") as f:
     scaler = pickle.load(f)
 
-with open("artifacts/label_encoder_gender.pkl", "rb") as f:
+with open("label_encoder_gender.pkl", "rb") as f:
     label_encoder_gender = pickle.load(f)
 
-with open("artifacts/one_hot_encoder_geo.pkl", "rb") as f:
+with open("one_hot_encoder_geo.pkl", "rb") as f:
     onehot_encoder_geo = pickle.load(f)
 
 
@@ -69,4 +69,5 @@ if prediction_proba > 0.5:
 else:
 
     st.write('The customer is not likely to churn.')
+
 
