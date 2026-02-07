@@ -1,9 +1,9 @@
-numpy<2
-pandas
-scikit-learn
-scikeras==0.12.0
 tensorflow==2.15.0
-tensorboard==2.15.2
-streamlit==1.31.1
-matplotlib
-protobuf<5
+keras==2.15.0
+scikeras==0.13.0
+numpy>=1.26.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+matplotlib>=3.8.0
+tensorboard>=2.15.0
+streamlit>=1.31.0
