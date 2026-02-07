@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model("model/model_tf215.h5", compile=False)
+model = tf.keras.models.load_model("model_tf215.h5", compile=False)
 
 # Load the encoders and scaler
 with open("artifacts/scaler.pkl", "rb") as f:
@@ -69,3 +69,4 @@ if prediction_proba > 0.5:
 else:
 
     st.write('The customer is not likely to churn.')
+
